@@ -22,6 +22,7 @@ function paintInput() {
   input.placeholder = "이름 입력";
   input.type = "text";
   input.className = "name__input";
+  input.style ="text-align: center;"
   const form = document.createElement("form");
   form.addEventListener("submit", handleSubmit);
   form.appendChild(input);
