@@ -38,7 +38,7 @@ function addToDo(text) {
     toDo.className = "toDo";
     toDo.id = toDos.length + 1;
     const deleteBtn = document.createElement("span");
-    deleteBtn.innerHTML = "â�Œ";
+    deleteBtn.innerHTML = "❌";
     deleteBtn.className = "toDo__button";
     deleteBtn.addEventListener("click", handleDelete);
     const label = document.createElement("label");
