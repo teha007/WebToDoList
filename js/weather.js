@@ -13,7 +13,7 @@ function getWeather(coords) {
     .then(json => {
       const name = json.name;
       const temperature = json.main.temp;
-      weather.innerHTML = `${Math.floor(temperature)}° @ ${name}`;
+      weather.innerHTML = `${Math.floor(temperature)}Â° @ ${name}`;
     });
 }
 
