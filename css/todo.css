@@ -9,4 +9,6 @@
 .toDo__button {
   margin-right: 10px;
   cursor: pointer;
+  color: brown;
+  font-weight: bold;
 }
