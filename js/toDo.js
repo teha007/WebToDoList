@@ -33,7 +33,6 @@ function handleDelete(event) {
 }
 
 function addToDo(text) {
-  // ? ? ??? 10?? ???? ??? ??? ??.
   if (toDos.length < 10) {
     const toDo = document.createElement("li");
     toDo.className = "toDo";
