@@ -16,7 +16,7 @@ function handleSubmit(event) {
   input.value = "";
 
   // 한글, 영어, 숫자만 입력 가능한 정규표현식
-  const reg_hanengnum = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*\s]$/;
+  const reg_hanengnum = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*\s]+$/;
   // const reg_hanengnum = /[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*\s]/;
 
   // 한글, 영어, 숫자를 제대로 입력하고
