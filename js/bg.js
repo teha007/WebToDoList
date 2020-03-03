@@ -19,8 +19,10 @@ function loadBackground() {
       body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(${parsedImage.url})`;
 
       console.log(parsedImage);
-      if ((parsedImage.name !== null) && (parsedImage.city !== null) && (parsedImage.country !== null)) {
-        locationContainer.innerHTML = `${parsedImage.name}, ${parsedImage.city}, ${parsedImage.country}`;
+      // if ((parsedImage.name !== null) && (parsedImage.city !== null) && (parsedImage.country !== null)) {
+      if (parsedImage.country !== null) {
+        // locationContainer.innerHTML = `${parsedImage.name}, ${parsedImage.city}, ${parsedImage.country}`;
+        locationContainer.innerHTML = `${parsedImage.country}`;
       }
     }
   }
