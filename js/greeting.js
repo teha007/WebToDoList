@@ -17,12 +17,16 @@ function handleSubmit(event) {
 
   if (value.length > 0) {
     paintName(value);
+    input.placeholder = "이름";
+  } else {
+    input.placeholder = "이름을 써주세요.";
   }
+
 }
 
 function paintInput() {
   const input = document.createElement("input");
-  input.placeholder = "이름 입력";
+  input.placeholder = "이름";
   input.type = "text";
   input.className = "name__input";
   input.style = "text-align: center;"

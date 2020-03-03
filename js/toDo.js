@@ -2,7 +2,6 @@ const form = document.querySelector(".js-to-do"),
   input = document.querySelector(".js-add-to-do"),
   list = document.querySelector(".js-list");
 
-
 let toDos = [];
 
 function persistToDos() {
@@ -49,6 +48,9 @@ function addToDo(text) {
       toDo.appendChild(label);
       list.appendChild(toDo);
       saveToDo(text);
+      input.placeholder = "할 일"
+    } else {
+      input.placeholder = "할 일을 써주세요.";
     }
   }
 }
