@@ -16,12 +16,8 @@ function loadBackground() {
     if (today > parsedImage.expiresOn) {
       getBackground();
     } else {
-      body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(${
-        parsedImage.url
-        })`;
-      locationContainer.innerHTML = `${parsedImage.name}, ${
-        parsedImage.city
-        }, ${parsedImage.country}`;
+      body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(${parsedImage.url})`;
+      locationContainer.innerHTML = `${parsedImage.name}, ${parsedImage.city}, ${parsedImage.country}`;
     }
   }
   return;
