@@ -45,7 +45,7 @@ function addToDo(text) {
     label.innerHTML = text;
 
     // 한글, 영어, 숫자만 입력 가능한 정규표현식
-    const reg_hanengnum = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*\s\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]+$/;
+    const reg_hanengnum = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*\s]$/;
 
     // 콘솔 로그를 이용해서 제대로 체크하는지 확인
     // console.log(!reg_hanengnum.test(text));

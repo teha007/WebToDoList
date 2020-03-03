@@ -14,14 +14,15 @@ function handleSubmit(event) {
   const input = form.querySelector("input");
   const value = input.value;
   input.value = "";
-  localStorage.setItem("username", value);
 
   // 한글, 영어, 숫자만 입력 가능한 정규표현식
-  const reg_hanengnum = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*\s]+$/;
+  const reg_hanengnum = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*\s]$/;
+  // const reg_hanengnum = /[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*\s]/;
 
   // 한글, 영어, 숫자를 제대로 입력하고
   // 최소 1글자 이상 입력했을시에만 할 일 목록에 추가
   if (reg_hanengnum.test(value) && value.length > 0) {
+    localStorage.setItem("username", value);
     paintName(value);
     input.placeholder = "이름";
   } else {
