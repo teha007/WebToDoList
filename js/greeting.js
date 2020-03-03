@@ -35,6 +35,7 @@ function paintInput() {
   input.type = "text";
   input.className = "name__input";
   input.style = "text-align: center;"
+  input.maxLength = "10";
   const form = document.createElement("form");
   form.addEventListener("submit", handleSubmit);
   form.appendChild(input);
