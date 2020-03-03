@@ -8,13 +8,11 @@ function getTime() {
     minutes < 10 ? `0${minutes}` : minutes
   }`;
   clock.innerHTML = time;
-  return;
 }
 
 function init() {
   getTime();
   setInterval(getTime, 1000);
-  return;
 }
 
 init();
