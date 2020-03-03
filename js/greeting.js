@@ -34,7 +34,7 @@ function paintInput() {
   input.placeholder = "이름";
   input.type = "text";
   input.className = "name__input";
-  input.style = "text-align: center;"
+  input.style = "text-align: center; width:300px;", 
   input.maxLength = "10";
   const form = document.createElement("form");
   form.addEventListener("submit", handleSubmit);
