@@ -2,7 +2,6 @@ const form = document.querySelector(".js-to-do"),
   input = document.querySelector(".js-add-to-do"),
   list = document.querySelector(".js-list");
 
-const Noinput = input.querySelector(".js-add-to-do");
 
 let toDos = [];
 
@@ -12,6 +11,7 @@ function persistToDos() {
 }
 
 function saveToDo(text) {
+  console.log(text.length);
   const toDoObject = {
     id: toDos.length + 1,
     value: text
@@ -33,6 +33,7 @@ function handleDelete(event) {
 }
 
 function addToDo(text) {
+
   if (toDos.length < 10) {
     const toDo = document.createElement("li");
     toDo.className = "toDo";
@@ -43,10 +44,12 @@ function addToDo(text) {
     deleteBtn.addEventListener("click", handleDelete);
     const label = document.createElement("label");
     label.innerHTML = text;
-    toDo.appendChild(deleteBtn);
-    toDo.appendChild(label);
-    list.appendChild(toDo);
-    saveToDo(text);
+    if (text.length > 0) {
+      toDo.appendChild(deleteBtn);
+      toDo.appendChild(label);
+      list.appendChild(toDo);
+      saveToDo(text);
+    }
   }
 }
 

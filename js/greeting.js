@@ -14,7 +14,10 @@ function handleSubmit(event) {
   const input = form.querySelector("input");
   const value = input.value;
   localStorage.setItem("username", value);
-  paintName(value);
+
+  if (value.length > 0) {
+    paintName(value);
+  }
 }
 
 function paintInput() {
@@ -22,7 +25,7 @@ function paintInput() {
   input.placeholder = "이름 입력";
   input.type = "text";
   input.className = "name__input";
-  input.style ="text-align: center;"
+  input.style = "text-align: center;"
   const form = document.createElement("form");
   form.addEventListener("submit", handleSubmit);
   form.appendChild(input);
