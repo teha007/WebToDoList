@@ -52,18 +52,17 @@ function addToDo(text) {
 
     // 한글, 영어, 숫자를 제대로 입력하고
     // 최소 1글자 이상 입력했을시에만 할 일 목록에 추가
-    if (reg_hanengnum.test(text)) {
-      if (text.length > 0) {
-        toDo.appendChild(deleteBtn);
-        toDo.appendChild(label);
-        list.appendChild(toDo);
-        saveToDo(text);
-        input.placeholder = "할 일"
-      } else {
-        input.placeholder = "할 일을 써주세요.";
-      }
+    if (text.length > 0 && reg_hanengnum.test(text)) {
+      toDo.appendChild(deleteBtn);
+      toDo.appendChild(label);
+      list.appendChild(toDo);
+      saveToDo(text);
+      input.placeholder = "할 일"
+    } else {
+      input.placeholder = "정확한 할 일을 써주세요.";
     }
-
+  } else {
+    input.placeholder = "목록은 최대 10개"
   }
 }
 

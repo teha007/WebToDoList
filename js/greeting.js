@@ -13,6 +13,7 @@ function handleSubmit(event) {
   const form = event.target;
   const input = form.querySelector("input");
   const value = input.value;
+  input.value = "";
   localStorage.setItem("username", value);
 
   // 한글, 영어, 숫자만 입력 가능한 정규표현식
@@ -20,13 +21,11 @@ function handleSubmit(event) {
 
   // 한글, 영어, 숫자를 제대로 입력하고
   // 최소 1글자 이상 입력했을시에만 할 일 목록에 추가
-  if (reg_hanengnum.test(value)) {
-    if (value.length > 0) {
-      paintName(value);
-      input.placeholder = "이름";
-    } else {
-      input.placeholder = "이름을 써주세요.";
-    }
+  if (reg_hanengnum.test(value) && value.length > 0) {
+    paintName(value);
+    input.placeholder = "이름";
+  } else {
+    input.placeholder = "정확한 이름을 써주세요.";
   }
 }
 
