@@ -43,15 +43,27 @@ function addToDo(text) {
     deleteBtn.addEventListener("click", handleDelete);
     const label = document.createElement("label");
     label.innerHTML = text;
-    if (text.length > 0) {
-      toDo.appendChild(deleteBtn);
-      toDo.appendChild(label);
-      list.appendChild(toDo);
-      saveToDo(text);
-      input.placeholder = "할 일"
-    } else {
-      input.placeholder = "할 일을 써주세요.";
+
+    // 한글, 영어, 숫자만 입력 가능한 정규표현식
+    var reg_hanengnum = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$/;
+
+    // 콘솔 로그를 이용해서 제대로 체크하는지 확인
+    // console.log(!reg_hanengnum.test(text));
+
+    // 한글, 영어, 숫자를 제대로 입력하고
+    // 최소 1글자 이상 입력했을시에만 할 일 목록에 추가
+    if (reg_hanengnum.test(text)) {
+      if (text.length > 0) {
+        toDo.appendChild(deleteBtn);
+        toDo.appendChild(label);
+        list.appendChild(toDo);
+        saveToDo(text);
+        input.placeholder = "할 일"
+      } else {
+        input.placeholder = "할 일을 써주세요.";
+      }
     }
+
   }
 }
 
