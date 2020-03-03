@@ -59,7 +59,7 @@ function addToDo(text) {
       saveToDo(text);
       input.placeholder = "할 일"
     } else {
-      input.placeholder = "정확한 할 일을 써주세요.";
+      input.placeholder = "할 일을 쓰세요.";
     }
   } else {
     input.placeholder = "목록은 최대 10개"

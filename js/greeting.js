@@ -25,7 +25,7 @@ function handleSubmit(event) {
     paintName(value);
     input.placeholder = "이름";
   } else {
-    input.placeholder = "정확한 이름을 써주세요.";
+    input.placeholder = "이름을 쓰세요.";
   }
 }
 
