@@ -10,7 +10,7 @@ function persistToDos() {
 }
 
 function saveToDo(text) {
-  console.log(text.length);
+  // console.log(text.length);
   const toDoObject = {
     id: toDos.length + 1,
     value: text

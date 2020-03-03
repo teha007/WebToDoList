@@ -17,7 +17,11 @@ function loadBackground() {
       getBackground();
     } else {
       body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(${parsedImage.url})`;
-      locationContainer.innerHTML = `${parsedImage.name}, ${parsedImage.city}, ${parsedImage.country}`;
+
+      console.log(parsedImage);
+      if ((parsedImage.name !== null) && (parsedImage.city !== null) && (parsedImage.country !== null)) {
+        locationContainer.innerHTML = `${parsedImage.name}, ${parsedImage.city}, ${parsedImage.country}`;
+      }
     }
   }
   return;
@@ -30,6 +34,7 @@ function saveBackground(imageUrl, city, country, name) {
   }
   const expirationDate = new Date();
   expirationDate.setDate(expirationDate.getDate() + 1);
+
   const imageObject = {
     url: imageUrl,
     expiresOn: expirationDate,
@@ -53,6 +58,7 @@ function getBackground() {
         const city = location.city;
         const country = location.country;
         const name = location.name;
+
         saveBackground(fullUrl, city, country, name);
       } else {
         getBackground();
