@@ -7,9 +7,8 @@ const weather = document.querySelector(".js-weather .weather__text");
 
 function getWeather(coords) {
     fetch(
-            `${WEATHER_API}lat=${coords.lat}&lon=${
-    coords.lng
-    }&appid=${API_KEY}&units=metric`
+            `${WEATHER_API}lat=${coords.lat}&lon=${coords.lng}
+             &appid=${API_KEY}&units=metric`
         )
         .then(response => response.json())
         .then(json => {
