@@ -42,7 +42,7 @@ function saveBackground(imageUrl, city, country, name) {
     expiresOn: expirationDate,
     city,
     country,
-    name
+    name,
   };
   localStorage.setItem("bg", JSON.stringify(imageObject));
   loadBackground();
@@ -51,8 +51,8 @@ function saveBackground(imageUrl, city, country, name) {
 
 function getBackground() {
   fetch(UNSPLASH_URL)
-    .then(response => response.json())
-    .then(json => {
+    .then((response) => response.json())
+    .then((json) => {
       const image = json;
       if (image.urls && image.urls.full && image.location) {
         const fullUrl = image.urls.full;
